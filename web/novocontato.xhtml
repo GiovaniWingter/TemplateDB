@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+
+    <ui:composition template="/Templates/Adm.xhtml">
+
+    <ui:define name="titulo">
+        Novo Contato
+    </ui:define>
+    
+    <ui:define name="conteudo">
+        <h2>Cadastrado de Contato</h2>
+        <h:form>
+            <h:outputText styleClass="peq" value="Nome" />
+                <h:inputText value="#{contatoController.contato.nome}" /><br/>
+                <h:outputText styleClass="peq" value="E-mail" />
+                <h:inputText value="#{contatoController.contato.email}" /><br/>
+                <h:outputText styleClass="peq" value="Telefone" />
+                <h:inputText value="#{contatoController.contato.telefone}" /><br/>
+                <h:commandButton styleClass="peq" action="#{contatoController.inserir()}" value="Inserir" />
+                <h:commandButton styleClass="peq" action="listacontato" immediate="true" value="Cancelar" />
+        </h:form> 
+    </ui:define>
+    
+    </ui:composition>
+    
+</html>
